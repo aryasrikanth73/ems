@@ -68,7 +68,9 @@
                                 <a href="leave.php" aria-expanded="true"><i class="ti-user"></i><span>Apply Leave
                                     </span></a>
                                 </li>
-        
+                                <li class="#">
+                                    <a href="permission.php" aria-expanded="true"><i class="ti-user"></i><span>Apply Permission</span></a>
+                                </li>
                                 <li class="active">
                                     <a href="leave-history.php" aria-expanded="true"><i class="ti-agenda"></i><span>View My Leave History
                                         </span></a>

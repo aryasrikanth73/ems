@@ -1,4 +1,4 @@
-    <?php
+<?php
     session_start();
     error_reporting(0);
     include('../includes/dbconn.php');
@@ -129,10 +129,10 @@
                                 <li class="#">
                                     <a href="attendance.php" aria-expanded="true"><i class="ti-agenda"></i><span>Attendance</span></a>
                                 </li>
-                                <li class="active">
+                                <li class="#">
                                     <a href="leave.php" aria-expanded="true"><i class="ti-user"></i><span>Apply Leave</span></a>
                                 </li>
-                                <li class="#">
+                                <li class="active">
                                     <a href="permission.php" aria-expanded="true"><i class="ti-user"></i><span>Apply Permission</span></a>
                                 </li>
                                 <li class="#">
@@ -208,30 +208,18 @@
                                             <p class="text-muted font-14 mb-4">Please fill up the form below.</p>
 
                                             <div class="form-group">
-                                                <label for="example-date-input" class="col-form-label">Starting Date</label>
+                                                <label for="example-date-input" class="col-form-label">Permisssion Date</label>
                                                 <input class="form-control date-picker" type="text" value="<?php echo $currentDate; ?>" required id="example-date-input" name="fromdate" placeholder="DD/MM/YYYY">
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="example-date-input" class="col-form-label">End Date</label>
-                                                <input class="form-control date-picker" type="text" value="<?php echo $currentDate; ?>" required id="example-date-input" name="todate" placeholder="DD/MM/YYYY">
+                                                <label for="example-time-input" class="col-form-label">Start Time</label>
+                                                <input class="form-control time-picker" type="time" value="<?php echo $currentTime; ?>" required id="example-time-input" name="fromtime" placeholder="HH:MM">
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-form-label">Your Leave Type</label>
-                                                <select class="custom-select" name="leavetype" autocomplete="off" required id="example-date-input">
-                                                    <option value="">Click here to select any ...</option>
-                                                    <?php 
-                                                    $sql = "SELECT LeaveType from tblleavetype";
-                                                    $query = $dbh->prepare($sql);
-                                                    $query->execute();
-                                                    $results = $query->fetchAll(PDO::FETCH_OBJ);
-                                                    if($query->rowCount() > 0) {
-                                                        foreach($results as $result) { ?> 
-                                                            <option value="<?php echo htmlentities($result->LeaveType);?>"><?php echo htmlentities($result->LeaveType);?></option>
-                                                    <?php }
-                                                    } ?>
-                                                </select>
+                                                <label for="example-time-input" class="col-form-label">End Time</label>
+                                                <input class="form-control time-picker" type="time" value="<?php echo $currentTime; ?>" required id="example-time-input" name="endtime" placeholder="HH:MM">
                                             </div>
 
                                             <div class="form-group">
